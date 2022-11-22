@@ -28,7 +28,7 @@ const RightArrow=() => {
 };
 
 const HorizontalScrollbar=({data, bodyParts, setBodyPart, bodyPart}) => (
-      <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+      <div style={{display: "flex", overflowX: "scroll"}} LeftArrow={LeftArrow} RightArrow={RightArrow}>
             {data.map((item) => (
                   <Box
                         key={item.id||item}
@@ -39,7 +39,7 @@ const HorizontalScrollbar=({data, bodyParts, setBodyPart, bodyPart}) => (
                         {bodyParts? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />:<ExerciseCard exercise={item} />}
                   </Box>
             ))}
-      </ScrollMenu>
+      </div>
 );
 
 export default HorizontalScrollbar;
